@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+    <!-- Bottom App Bar -->
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
@@ -17,6 +17,7 @@
         app:hideOnScroll="false"
         app:contentInsetStart="0dp">
 
+        <!-- Bottom Navigation View -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
@@ -25,6 +26,7 @@
             app:menu="@menu/bottom_nav_menu" />
     </com.google.android.material.bottomappbar.BottomAppBar>
 
+    <!-- Floating Action Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
@@ -34,14 +36,74 @@
         android:contentDescription="Add Item"
         android:src="@drawable/but"
         app:layout_anchor="@id/bottomAppBar"
-
         app:fabSize="normal"
         app:maxImageSize="72dp"
         app:tint="@color/pink"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="@color/white" />
 
-        />
+    <!-- RelativeLayout for the icon, text, and CalendarView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="17dp"
+        android:orientation="horizontal">
 
+        <!-- ImageView for the icon -->
 
+        <!-- TextView for the text "cookey" -->
+        <ImageView
+            android:layout_width="96dp"
+            android:layout_height="95dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/icon_foreground" />
 
+        <TextView
+            android:id="@+id/cookeyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="cookey"
+            android:textColor="#000000"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="17dp"
+        android:background="@drawable/border_background"
+        android:orientation="horizontal">
+
+        <!-- CalendarView to display the calendar -->
+
+        <!-- TextView to display events for selected date -->
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="17dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:firstDayOfWeek="2" />
+
+        <TextView
+            android:id="@+id/eventTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Events for selected date:"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- LinearLayout to contain CalendarView and TextView side by side -->
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
