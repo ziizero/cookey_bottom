@@ -95,6 +95,15 @@
             android:layout_weight="1"
             android:firstDayOfWeek="2" />
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="261dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="#72000000"
+
+            />
         <TextView
             android:id="@+id/eventTextView"
             android:layout_width="0dp"
