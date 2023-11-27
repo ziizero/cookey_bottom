@@ -44,6 +44,7 @@
 
     <!-- RelativeLayout for the icon, text, and CalendarView -->
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="17dp"
@@ -76,6 +77,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
@@ -88,6 +90,7 @@
         <!-- CalendarView to display the calendar -->
 
         <!-- TextView to display events for selected date -->
+
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="17dp"
@@ -104,6 +107,7 @@
             android:background="#72000000"
 
             />
+
         <TextView
             android:id="@+id/eventTextView"
             android:layout_width="0dp"
@@ -115,5 +119,99 @@
 
     </LinearLayout>
 
-    <!-- LinearLayout to contain CalendarView and TextView side by side -->
+    <!-- Add this LinearLayout below the existing LinearLayout for the calendar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="17dp"
+        android:background="@drawable/border_background">
+
+        <!-- TextView for displaying time -->
+
+        <!-- TextView for displaying saturation level -->
+
+        <TextView
+            android:id="@+id/timeTextView2"
+            android:layout_width="366dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="17dp"
+            android:gravity="center|left"
+            android:text="Time"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="-2dp" />
+
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="347dp"
+            android:layout_height="81dp"
+            android:layout_marginStart="17dp"
+            android:gravity="center|top"
+            android:text="11:20    "
+            android:textColor="#000000"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/saturationTextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextView"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="NotSibling" />
+
+        <TextView
+            android:id="@+id/saturationTextView"
+            android:layout_width="378dp"
+            android:layout_height="41dp"
+            android:gravity="top|left"
+            android:text="포화도"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/timeTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/timeTextView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/saturationTextView2"
+            android:layout_width="359dp"
+            android:layout_height="84dp"
+            android:gravity="bottom|right"
+            android:text="75%"
+            android:textColor="#2196F3"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.441"
+            app:layout_constraintStart_toEndOf="@+id/timeTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.807" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="20dp"
+        android:background="#2A5A5A5A"
+        app:layout_anchorGravity="bottom|center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saturationTextView2" />
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
